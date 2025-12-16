@@ -20,7 +20,7 @@ pip install -r requirements.txt
 ```
 4. Run the application.
 ```
-python3 app.py run 
+python3 app.py run
 ```
 By default app runs on port `8000`, this behaviour can be modified in `app.py`.
 

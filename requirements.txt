@@ -18,7 +18,6 @@ MarkupSafe==3.0.3
 nodeenv==1.9.1
 pathspec==0.12.1
 platformdirs==4.4.0
-pre_commit==4.3.0
 PyYAML==6.0.3
 regex==2025.11.3
 six==1.17.0

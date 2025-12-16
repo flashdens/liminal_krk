@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+    </head>
+    <style>
 .map {
     height: 100vh;
     width: 100vw;
@@ -22,17 +22,19 @@
     #place-{{ place.id }} {
         left: {{ place.xpos }}vw;
         bottom: {{ place.ypos }}vh;
-    }   
+    }
 {% endfor %}
-</style>
-<body>
-    <div class="map-container">
-        {% for place in places%}
-            <a href="{{ url_for('get_place', id='%s' % place.id) }}">
-                <img class="place-pin" id="place-{{ place.id }}" src="{{url_for('static', filename='pin.png')}}"/>
-            </a>
-        {% endfor %}
-        <img class="map" src="{{url_for('static', filename='map.jpg')}}"/>
-    </div>
-</body>
+    </style>
+    <body>
+        <div class="map-container">
+            {% for place in places %}
+                <a href="{{ url_for('get_place', id='%s' % place.id) }}">
+                    <img class="place-pin"
+                         id="place-{{ place.id }}"
+                         src="{{ url_for('static', filename='pin.png') }}" />
+                </a>
+            {% endfor %}
+            <img class="map" src="{{ url_for('static', filename='map.jpg') }}" />
+        </div>
+    </body>
 </html>

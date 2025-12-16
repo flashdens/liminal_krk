@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+    </head>
+    <style>
 .place-image {
     height: 100vh;
     width: 100vw;
@@ -23,13 +23,17 @@
     #item-{{ item.id }} {
         left: {{ item.xpos }}vw;
         bottom: {{ item.ypos }}vh;
-    }   
+    }
 {% endfor %}
-</style>
-<body>
-{% for item in items %}
-    <img class="item-pin" onclick="alert('{{ item.name }}')" id="item-{{ item.id }}" src="{{ url_for('static', filename='items/' ~ item.id ~ '.png') }}"/>
-{% endfor %}
-<img class="place-image" src="{{ url_for('static', filename='places/%s.png' % place.id) }}">
-</body>
+    </style>
+    <body>
+        {% for item in items %}
+            <img class="item-pin"
+                 onclick="alert('{{ item.name }}')"
+                 id="item-{{ item.id }}"
+                 src="{{ url_for('static', filename='items/' ~ item.id ~ '.png') }}" />
+        {% endfor %}
+        <img class="place-image"
+             src="{{ url_for('static', filename='places/%s.png' % place.id) }}">
+    </body>
 </html>
