@@ -40,5 +40,5 @@ def get_place(id):
     place = db.execute(f'SELECT * FROM place WHERE id = {id}').fetchone()
     return render_template('place.html', place=place, items=items)
 
-if __name__ == "__main__":
-    app.run(port=8000, debug=True)
+def create_app():
+    return app

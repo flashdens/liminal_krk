@@ -19,7 +19,8 @@ CREATE TABLE item (
 );
 
 INSERT INTO place (name, xpos, ypos) VALUES
-    ('kielce', 20, 50);
+    ('kielce', 20, 50),
+    ('2', 40, 40);
 
 INSERT INTO ITEM (place_id, name, desc, xpos, ypos) VALUES
     (1, 'hello1', 'srutututu', 20, 20),
