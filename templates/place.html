@@ -7,12 +7,18 @@
     </head>
     <style>
 
-body {
+body, html {
+    height: 100%;
+    margin: 0;
     overflow: hidden;
 }
-.place-image {
+.place {
+    background-image: url("{{ url_for('static', filename='places/%s.png' % place.id) }}");
     height: 100vh;
     width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .item-pin {
@@ -29,15 +35,15 @@ body {
         bottom: {{ item.ypos }}vh;
     }
 {% endfor %}
-    </style>
-    <body>
+</style>
+    
+<body>
+    <div class="place"></div>
         {% for item in items %}
             <img class="item-pin"
                  onclick="alert('{{ item.name }}')"
                  id="item-{{ item.id }}"
                  src="{{ url_for('static', filename='items/' ~ item.id ~ '.png') }}" />
         {% endfor %}
-        <img class="place-image"
-             src="{{ url_for('static', filename='places/%s.png' % place.id) }}">
     </body>
 </html>
